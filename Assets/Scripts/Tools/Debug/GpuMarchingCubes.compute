@@ -1,0 +1,102 @@
+#pragma kernel MarchCubes
+
+// Define the size of the data buffer
+#define CHUNK_SIZE_X 16
+#define CHUNK_SIZE_Y 16
+#define CHUNK_SIZE_Z 16
+
+// Buffer to hold voxel data
+StructuredBuffer<float> voxelData;
+
+// Buffer to hold the generated vertices
+RWStructuredBuffer<float3> vertices;
+
+// Buffer to hold the generated triangles
+RWStructuredBuffer<int> triangles;
+
+// Lookup tables
+StructuredBuffer<int3> CornerTable;
+StructuredBuffer<int> EdgeTable;
+StructuredBuffer<int> TriangleTable;
+StructuredBuffer<int2> EdgeIndexes;
+
+// Terrain surface level
+float terrainSurface;
+
+// Counter for vertices and triangles
+RWStructuredBuffer<int> vertexCounter;
+RWStructuredBuffer<int> triangleCounter;
+
+[numthreads(8, 8, 8)]
+void MarchCubes(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= CHUNK_SIZE_X || id.y >= CHUNK_SIZE_Y || id.z >= CHUNK_SIZE_Z)
+        return;
+
+    int3 position = int3(id.x, id.y, id.z);
+    float cube[8];
+    for (int i = 0; i < 8; i++)
+    {
+        int3 corner = CornerTable[i];
+        cube[i] = voxelData[(position.x + corner.x) + (position.y + corner.y) * CHUNK_SIZE_X + (position.z + corner.z) * CHUNK_SIZE_X * CHUNK_SIZE_Y];
+    }
+
+    int configIndex = GetCubeConfiguration(cube);
+
+    if (configIndex == 0 || configIndex == 255)
+        return;
+
+    for (int i = 0; i < 15; i += 3)
+    {
+        int indice = TriangleTable[configIndex * 16 + i];
+        if (indice == -1)
+            return;
+
+        int2 edge0 = EdgeIndexes[indice];
+        int2 edge1 = EdgeIndexes[TriangleTable[configIndex * 16 + i + 1]];
+        int2 edge2 = EdgeIndexes[TriangleTable[configIndex * 16 + i + 2]];
+
+        float3 vert0 = InterpolateVertex(position + CornerTable[edge0.x], position + CornerTable[edge0.y], cube[edge0.x], cube[edge0.y]);
+        float3 vert1 = InterpolateVertex(position + CornerTable[edge1.x], position + CornerTable[edge1.y], cube[edge1.x], cube[edge1.y]);
+        float3 vert2 = InterpolateVertex(position + CornerTable[edge2.x], position + CornerTable[edge2.y], cube[edge2.x], cube[edge2.y]);
+
+        int v0 = atomicAdd(vertexCounter[0], 1);
+        int v1 = atomicAdd(vertexCounter[0], 1);
+        int v2 = atomicAdd(vertexCounter[0], 1);
+
+        vertices[v0] = vert0;
+        vertices[v1] = vert1;
+        vertices[v2] = vert2;
+
+        int t0 = atomicAdd(triangleCounter[0], 1);
+        triangles[t0 * 3] = v0;
+        triangles[t0 * 3 + 1] = v1;
+        triangles[t0 * 3 + 2] = v2;
+    }
+}
+
+int GetCubeConfiguration(float cube[8])
+{
+    int configurationIndex = 0;
+    for (int i = 0; i < 8; i++)
+    {
+        if (cube[i] > terrainSurface)
+        {
+            configurationIndex |= 1 << i;
+        }
+    }
+    return configurationIndex;
+}
+
+float3 InterpolateVertex(float3 p1, float3 p2, float valp1, float valp2)
+{
+    if (abs(terrainSurface - valp1) < 0.00001)
+        return p1;
+    if (abs(terrainSurface - valp2) < 0.00001)
+        return p2;
+    if (abs(valp1 - valp2) < 0.00001)
+        return p1;
+
+    float t = (terrainSurface - valp1) / (valp2 - valp1);
+    return p1 + t * (p2 - p1);
+}

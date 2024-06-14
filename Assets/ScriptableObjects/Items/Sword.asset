@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d557c7d36a1de4b9e0463d996d688e, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  itemName: Sword
+  description: 'A gleaming steel blade with an ornate hilt, balanced for deadly precision.
+    A symbol of honor and strength wielded by knights and champions.
+
+
+    - 20 Dmg
+
+'
+  itemTexture: {fileID: 21300000, guid: d8f4643b53d2836448ee8ac6e75e5805, type: 3}
+  prefab: {fileID: 1253251103094975905, guid: d8a6f60f482f82043b09693b519f988f, type: 3}
+  dmg: 20

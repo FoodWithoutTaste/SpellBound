@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea8a7aff87339d4c9754a2ab0d2e9ec, type: 3}
+  m_Name: FireBallDark
+  m_EditorClassIdentifier: 
+  spellName: Fireball
+  animClip: {fileID: 7400000, guid: edf435d30fb582245893a300a5a2a70e, type: 2}
+  Prefab: {fileID: 6588968068063408074, guid: 6db427d9b4f8d6140b829e713549a221, type: 3}
+  waitTimeBeforeSpawn: 0.25
+  manaCost: 30
+  delayedUncast: 0
+  waitTimeAfterUncast: 0
+  spellTime: 2
+  coolDown: 0
+  dmg: 60
+  projectileSpeed: 120

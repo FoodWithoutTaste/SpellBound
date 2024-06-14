@@ -1,0 +1,30 @@
+newmtl Material.020
+map_Kd Material.020-seed_3369414015-albedo-re_2ftU9ExMUADvQi7EEQaG15KSJLy.png
+map_Bump -bm 1.000000 Material.020-seed_3369414015-normal-re_2ftU9GzTUo4wRYg9Gm3VX6Bybc9.png
+newmtl Material.021
+map_Kd Material.021-seed_3369414015-albedo-re_2ftU9ITDQadGYqyv3SqxxWK68ki.png
+map_Bump -bm 1.000000 Material.021-seed_3369414015-normal-re_2ftU9J9yCX2DeJSWfRFzKIOmLj2.png
+newmtl Material.022
+map_Kd Material.022-seed_3369414015-albedo-re_2ftU9KcEU16VaUF77s1Tu142pxc.png
+map_Bump -bm 1.000000 Material.022-seed_3369414015-normal-re_2ftU9LobE0i9coIfODH2HnfGfMI.png
+newmtl Material.023
+map_Kd Material.023-seed_3369414015-albedo-re_2ftU9No9QDNDxQAwRE8Zhrn2WDQ.png
+map_Bump -bm 1.000000 Material.023-seed_3369414015-normal-re_2ftU9PkUUSDbcPlUJTiWAZYEgDl.png
+newmtl Material.024
+map_Kd Material.024-seed_3369414015-albedo-re_2ftU9REseP8aowxQ7pARBl24sjq.png
+map_Bump -bm 1.000000 Material.024-seed_3369414015-normal-re_2ftU9SMyXSf9kIbVLjvYJfStdot.png
+newmtl Material.025
+map_Kd Material.025-seed_3369414015-albedo-re_2ftU9TZUtMBKFMlznKKZlrO3PD7.png
+map_Bump -bm 1.000000 Material.025-seed_3369414015-normal-re_2ftU9UgJDwjK64pvE9D8doEHMfa.png
+newmtl Material.027
+map_Kd Material.027-seed_3369414015-albedo-re_2ftU9Vq5kMdI4oOungRU501heww.png
+map_Bump -bm 1.000000 Material.027-seed_3369414015-normal-re_2ftU9Wl8gta9TNYJiHtW3zXZ096.png
+newmtl Material.028
+map_Kd Material.028-seed_3369414015-albedo-re_2ftU9Y0JZ9X7sHnXSdSglORqePM.png
+map_Bump -bm 1.000000 Material.028-seed_3369414015-normal-re_2ftU9Yi7m6pK71RjnEV6vvQmUAI.png
+newmtl Material.029
+map_Kd Material.029-seed_3369414015-albedo-re_2ftU9aevGwCrUc8tQggM03B62Oo.png
+map_Bump -bm 1.000000 Material.029-seed_3369414015-normal-re_2ftU9bg5iQNtXnd4g8zn9vdUpUG.png
+newmtl Material.030
+map_Kd Material.030-seed_3369414015-albedo-re_2ftU9dFEoqWH7kzxg4F5TVMOw4R.png
+map_Bump -bm 1.000000 Material.030-seed_3369414015-normal-re_2ftU9fRmuco91NJewPTiLBfoZuP.png

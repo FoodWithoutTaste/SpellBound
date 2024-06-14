@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc9c1f5fb0c3fe40a62c4cd64a35474, type: 3}
+  m_Name: MeleeCombo1
+  m_EditorClassIdentifier: 
+  animCLips:
+  - {fileID: 7400000, guid: 6a3575344ebb6e24fa13d7eb2c39c551, type: 2}
+  - {fileID: 7400000, guid: 6a3575344ebb6e24fa13d7eb2c39c551, type: 2}

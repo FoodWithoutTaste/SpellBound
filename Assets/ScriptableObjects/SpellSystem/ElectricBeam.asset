@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250125efd3976c142be4704e509413be, type: 3}
+  m_Name: ElectricBeam
+  m_EditorClassIdentifier: 
+  spellName: ElectricBeam
+  animClip: {fileID: 7400000, guid: b0d8833b28457734f9dfe7d2ed525cf4, type: 2}
+  Prefab: {fileID: 7557176839534833024, guid: 0dfc602d2c101994ea32b6234374ce2c, type: 3}
+  waitTimeBeforeSpawn: 0.64
+  delayedUncast: 0
+  waitTimeAfterUncast: 0
+  spellTime: 14.2
+  coolDown: 0
+  dmg: 13.22
